@@ -21,6 +21,7 @@ const authController = {
                         return res.status(400).send("Please make sure all required fields are valid");
                     }
                     if (err.name === 'MongoError') {
+                        console.log({err});
                         return res.status(400).send("Username was registered or email is duplicate.");
                     }
                     return res.status(400).send(err.name);
